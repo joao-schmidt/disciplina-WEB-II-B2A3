@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasalApp - Transações Financeiras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-title">
+                <i data-lucide="wallet" class="icon-lg"></i>
+                <h1>CasalApp Finance</h1>
+            </div>
+            <p>Gerenciamento de finanças do casal</p>
+        </header>
+
+        <main class="dashboard">
+            <section class="form-section glass-panel">
+                <h2><i data-lucide="plus-circle"></i> Nova Transação</h2>
+                <form id="transacao-form">
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" id="descricao" name="descricao" placeholder="Ex: Conta de Luz" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="valor">Valor (R$)</label>
+                            <input type="number" id="valor" name="valor" step="0.01" min="0.01" placeholder="0.00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="despesa">Despesa</option>
+                                <option value="receita">Receita</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Adicionar Transação</button>
+                </form>
+            </section>
+
+            <section class="list-section glass-panel">
+                <h2><i data-lucide="list"></i> Histórico</h2>
+                <div class="transacoes-list" id="transacoes-list">
+                    <div class="loading">Carregando transações...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
